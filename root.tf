@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 module "eks-vpc" {
-    source = "./vpc"
+    source = "./VPC"
 }
 
 module "pri-cluster" {
-    source = "./eks"
+    source = "./EKS"
     eks-vpc-id = module.eks-vpc.eks-vpc-id
     pri-sub1-id = module.eks-vpc.pri-sub1-id
     pri-sub2-id = module.eks-vpc.pri-sub2-id
